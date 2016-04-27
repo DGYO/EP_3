@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 21 14:14:52 2016
-
-@author: Giovanni Ranieri
-"""
 import tkinter as tk
+from JogoDaVelhaCodigo import JogoDaVelha
 
 class Tabuleiro:
-    def __init__(self):
+    def __init__(self,Back):
         self.window = tk.Tk()
         self.window.geometry("600x650")
         self.window.title("Jogo da Velha")
@@ -19,9 +15,10 @@ class Tabuleiro:
         self.window.columnconfigure(1, minsize = 200 ,weight=1)
         self.window.columnconfigure(2, minsize = 200 ,weight=1)
         
+        
         botão = tk.Button(self.window)
         botão.grid(row=0, column=0, sticky="nsew")
-        
+                
         botão2 = tk.Button(self.window)
         botão2.grid(row=1, column=0, sticky="nsew")
         
@@ -37,19 +34,24 @@ class Tabuleiro:
         
         botão6 = tk.Button(self.window)
         botão6.grid(row=2, column=1, sticky="nsew")
-        
+       
         botão7 = tk.Button(self.window)
         botão7.grid(row=0, column=2, sticky="nsew")
         
         botão8 = tk.Button(self.window)
         botão8.grid(row=1, column=2, sticky="nsew")
-        
+       
         botão9 = tk.Button(self.window)
         botão9.grid(row=2, column=2, sticky="nsew")
+        
+        botão10 = tk.Button(self.window)
+        botão10.grid(row=3, column=0, sticky="nsew")
+        
         
     def iniciar(self):
         self.window.mainloop()
         
-app = Tabuleiro()
-app.iniciar()
+b = JogoDaVelha()
+a = Tabuleiro(b)
+a.iniciar()
 

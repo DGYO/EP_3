@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 21 14:44:18 2016
-
-@author: frana
-"""
 import numpy as np
 
 
@@ -11,7 +6,9 @@ class JogoDaVelha:
     def __init__(self):
         self.base = np.zeros((3,3))
         self.jogador = 1
-   
+        self.conPlayer1 = 0
+        self.conPlayer2 = 0        
+        
     def show_game(self):
         print(self.base)
 
@@ -68,15 +65,11 @@ class JogoDaVelha:
             return 3
         else:
             return -1
-
-
-aga = JogoDaVelha()
-print(aga.jogador)
-aga.show_game()
-aga.recebe_jogada(2,1)
-aga.show_game()
-aga.verifica_ganhador()
-aga.show_game()
-aga.recebe_jogada(1,2)
-aga.verifica_ganhador()
-aga.show_game()
+        
+        
+    def limpa_jogada(self):
+        self.base = np.zeros((3,3))
+        if self.verifica_ganhador == 1:
+            self.conPlayer1 += 1
+        elif self.verifica_ganhador == 2:
+            self.conPlayer2 += 1
