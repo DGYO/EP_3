@@ -133,12 +133,6 @@ class Tabuleiro:
             
         self.game.recebe_jogada(1,0)
         
-        botão = tk.Button(self.window)
-        botão.grid(row=0, column=0, sticky="nsew")
-                
-        botão2 = tk.Button(self.window)
-        botão2.grid(row=1, column=0, sticky="nsew")
-
         
         if self.game.verifica_ganhador() == 1: 
             self.botão_reset.configure(text="SALVE X! (JOGUE DE NOVO!)")
@@ -221,7 +215,7 @@ class Tabuleiro:
             self.botão_reset.configure(text="SALVE O!(JOGUE DE NOVO!)")
         elif self.game.verifica_ganhador() == 0: 
             self.botão_reset.configure(text="Ninguém, tente outra vez! (JOGUE DE NOVO!) ")
-        
+            
     def iniciar(self):
         self.window.mainloop()
         
