@@ -69,7 +69,7 @@ class Tabuleiro:
         
         
     def reset (self):
-        self.game.limpa_jogadas()
+        self.game.limpa_jogada()
         self.botão1.configure(text="")
         self.botão2.configure(text="")
         self.botão3.configure(text="")
